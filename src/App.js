@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import data from './api/index';
+import ReactExpandableGrid from './components/ExpandableGrid';
+import './App.scss';
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      dataString:[]
+    }
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  componentWillMount(){
+    data.getData(item => { this.setState({dataString:item}) })
+  }
+
+  render(){
+     return(
+      <ReactExpandableGrid
+      gridData={this.state.dataString}
+      detailHeight={300}
+      ExpandedDetail_image_size={300}
+      cellSize={250}
+      ExpandedDetail_closeX_bool={false}
+    />
+     )
+  }
+
 }
-
 export default App;
