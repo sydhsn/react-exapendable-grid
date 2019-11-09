@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 body {
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 14px;
@@ -7,7 +6,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
 a {
 	color: #08c;
 	text-decoration: none;
@@ -127,3 +125,21 @@ label {
     background: #008ed7;
     border: 2px solid white;
 }
+.header{
+	height: 50px !important;
+}
+.ant-layout-footer{
+	padding: 15px 50px !important;
+    background: #001529 !important;
+}
+.ant-layout-footer a{
+	color: #888;
+}
+
+.login-form {
+	max-width: 300px;
+	margin: 20px auto;
+  }
+  .login-form-button {
+	width: 100%;
+  }
